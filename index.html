@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pengisian Data KTP</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            width: 500px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="date"],
+        input[type="file"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        select {
+            height: 34px;
+            width: 104%;
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        button[type="submit"] {
+            padding: 10px 20px;
+            margin: 25px 0;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 104%;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Form Pengisian Data KTP</h2>
+    <form action="test.php" method="post" enctype="multipart/form-data">
+        <label for="nik">NIK:</label>
+        <input type="number" name="nik" id="nik" required>
+
+        <label for="nama">Nama:</label>
+        <input type="text" name="nama" id="nama" required>
+
+        <label for="ttl">Tempat/Tanggal Lahir:</label>
+        <div>
+            <input type="text" name="tempat" id="tempat" required>
+            <input type="date" name="tanggal" id="tanggal" required>
+        </div>
+
+        <label for="jeniskelamin">Jenis Kelamin:</label>
+        <select name="jeniskelamin" id="jeniskelamin" required>
+            <option value="" disabled selected>Pilih jenis kelamin</option>
+            <option value="Laki-Laki">Laki-Laki</option>
+            <option value="Perempuan">Perempuan</option>
+        </select>
+
+        <label for="alamat">Alamat:</label>
+        <textarea name="alamat" id="alamat" rows="4" required></textarea>
+
+        <label for="agama">Agama:</label>
+        <select name="agama" id="agama" required>
+            <option value="" disabled selected>Pilih agama</option>
+            <option value="Islam">Islam</option>
+            <option value="Kristen">Kristen</option>
+            <option value="Katolik">Katolik</option>
+            <option value="Hindu">Hindu</option>
+            <option value="Budha">Budha</option>
+        </select>
+
+        <label for="status">Status Perkawinan:</label>
+        <select name="status" id="status" required>
+            <option value="" disabled selected>Pilih status perkawinan</option>
+            <option value="Sudah Kawin">Sudah Kawin</option>
+            <option value="Belum Kawin">Belum Kawin</option>
+        </select>
+
+        <label for="pekerjaan">Pekerjaan:</label>
+        <input type="text" name="pekerjaan" id="pekerjaan" required>
+
+        <label for="kewarga">Kewarganegaraan:</label>
+        <select name="kewarga" id="kewarga" required>
+            <option value="" disabled selected>Pilih kewarganegaraan</option>
+            <option value="WNI">WNI</option>
+            <option value="WNA">WNA</option>
+        </select>
+
+        <label for="berlaku">Berlaku Hingga:</label>
+        <input type="text" name="berlaku" id="berlaku" required>
+
+        <label for="gambar">Gambar:</label>
+        <input type="file" name="gambar" id="gambar" accept="image/*" required>
+
+        <label for="tanggalpem">Tanggal Pembuatan:</label>
+        <input type="date" name="tanggalpem" id="tanggalpem" required>
+
+        <label for="ttd">Tanda Tangan:</label>
+        <input type="file" name="ttd" id="ttd" accept="image/*" required>
+
+        <button type="submit" name="submit" onclick="return confirm('COBA CEK LAGI NGAB!')">Submit</button>
+    </form>
+</body>
+
+</html>
